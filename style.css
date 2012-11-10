@@ -1,0 +1,94 @@
+/* Page wise */
+img							{ border: thin solid #999; padding: 1px; }
+body						{ min-width:860px; color: #bbb; background: #333; background-image:url("img/gradient-top.png"); background-repeat: repeat-x; font-family: Helvetica, Tahoma,"Bitstream Vera Sans",sans-serif; font-size: 0.8em;}
+a:visited					{ color: #aaa; text-decoration:none; }
+a:link						{ color: #ddd; text-decoration:none; }
+a:hover						{ text-decoration:underline; }
+
+/* Generic */
+div.content					{ position:relative;left:400px; margin-top: 10%; width: 604px; }
+p.date						{ font-style:italic; }
+
+/* Frontpage */
+div.frontMenu				{ float:right; }
+div.frontInfo				{ margin-top: 4px; position:relative; color:#777; }
+div.frontText				{ width: 300px; float:left; }
+
+/* Album specific */
+div.album					{ position:relative; margin-top: 10%; width: 604px; float:left; }
+div.images					{ margin-left:500px;  }
+div.imageBox				{ position:relative; float:left; }
+div.vertical				{ margin:0 50px; }
+div.imageInfo				{ margin-bottom:4px; width:100%; }
+div.links					{ position:relative; float:right; }
+div.overLay					{ background: rgb(0, 0, 0); background: rgba(0, 0, 0, 0.7); left: 2px; padding: 6px; position: absolute; }
+div.overLay					{ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#b2000000, endColorstr=#b2000000); -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)"; }
+div.between					{ position:relative; float:left; width: 400px; }
+div.image					{ position:relative; float:left; }
+
+/* Album info specific */
+div.info					{ position:fixed; margin-top: 80px; float:left; width: 25%; min-width:240px; max-width:400px; }
+div.info h2					{ font-size:1.6em; color:#eee; margin-bottom:3px; }
+div.info p.desc				{ margin-top:1em; margin-bottom:5px; line-height:1.3em; }
+div.info p.me				{ margin-top:0.3em; margin-right:10px; float:right; font-style:italic; }
+div.info a.fp				{ line-height:1.5em; }
+div.imageStat				{ margin-top:30px; }
+div.imageStat h3			{ font-size:1.3em; color:#eee; margin-bottom:0.6em; padding-top:3px; height:24px; }
+div.imageStat h3 p			{ margin-top: 8px; }
+img#icon					{ position:relative; float:left; margin-right:10px; }
+div.ii						{ clear:both; line-height:1.3em; }
+div.iiLabel					{ width:100px; position:relative; float:left; }
+div.iiField					{ width:auto; position:relative; float:left; }
+div.iiDescription			{ font-style:italic; margin-top:10px; line-height:1.2em; }
+div#navigation h3			{ padding-top:30px; font-size:1.3em; color:#eee; }
+div.albumNavLink			{ clear: both; margin-top: 16px; height: 50px; }
+div.albumNavLink img		{ position: relative; float: left; height: 50px; }
+div.albumNavLink h4			{ font-size: 1.2em; color: #eee; padding-left: 5px; position: relative; float: left; width: 50%; min-width: 140px; }
+div.albumNavLink p			{ width: 70%; min-width:140px; position: relative; float: left; padding-left: 5px; padding-top: 3px; }
+
+/* Display box specific */
+div#displaybox 				{ display:none; z-index: 1000 !important; background-color:#000000; position:fixed; top:0px; left:0px; width:100%; height:100%; text-align:center; vertical-align:middle; }
+div#displaybox				{ background: rgb(0, 0, 0); } /* Fallback */
+div#displaybox				{ background: rgba(0, 0, 0, 0.6); }
+div#displaybox				{ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000); }
+div#displaybox				{ -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)"; }
+div#cache					{ display:none; }
+
+/* Caption specific */
+div#caption 				{ z-index: 2000 !important; background-color:#000000; position:fixed; top:300px; left:300px; width:556px; height:auto; }
+div#caption					{ background: rgba(0, 0, 0, 0.6); }
+div#caption					{ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000); }
+div#caption					{ -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)"; }
+div#navPrev					{ text-align:left; vertical-align:middle; width:30px; position:relative; float:left; }
+div#navPrev p				{ padding-left:10px; font-size:1.3em; }
+div#navNext					{ text-align:right; vertical-align:middle; width:30px; position:relative; float:left; }
+div#navNext p				{ padding-right:10px; font-size:1.3em; }
+div#captionText				{ position:relative; float:left; width:496px; text-align:left; }
+div#captionText p			{ padding:2px; }
+
+
+/* Index specific */
+div.indexBox				{ position:relative; float:left; margin:27px 300px 0 0; }
+img.indexThumb				{ position:relative; float:left; margin-top: 15px; }
+div.indexSpace				{ position:relative; float:left; width:15px; height: 50px; }
+div.indexNav				{ margin-top: 15px; height: 12px; position:relative;  clear:both; }
+div.indexNav img			{ border: none; display: none; cursor: pointer; }
+div.indexRow				{ display: none; }
+div.arrowUp					{ z-index:3; }
+
+
+/* Album List specific */
+div.albums					{ margin-top:80px; position:relative; float:left; width:600px; }
+div.albumBox				{ position:relative; float:left; width:154px; margin-left:35px; margin-bottom:25px; }
+div.albumBox p				{ margin-bottom:3px; width:154px; }
+div.albumBox img			{ margin-bottom:3px; }
+div.albumBox img.current	{ border-color:#f3f3ee; }
+div.col1					{ clear:both; }
+
+/* About */
+div.about					{ margin-top:40px; margin-bottom: 20px; padding:0 30px; line-height:1.2; }
+div.about p					{ clear:both; margin-top:4px; }
+a.abouthome					{ padding:0 30px; }
+
+
+
