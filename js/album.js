@@ -1,18 +1,21 @@
-define(["domReady!", "size", "jquery", "smugmug", "history", "cookie"], function(domReady, size, $, smugmug, history, cookie) {
+define(["size", "jquery", "smugmug", "history", "cookie"], function(size, $, smugmug, history, cookie) {
 
 	// Init album
 	album = {};
 
-	album.display = function() {
+	// Cache all images
+	cacheAll();
+	// Make sure we load the EXIF data for each image
+	getEXIF();
+
+	album.init = function() {
 
 		// Set everything that needs to be set, and make sure to update it on resize
 		onResizeAndLoad();
 
 		// Check if we want to navigate to a specific image
-		if (document.URL.split("&img").length > 1) openOverlay(window.location.hash.substr(1));
+		if (document.URL.split("&img").length > 1) openOverlay(document.URL.split("&img=")[1]);
 
-		// Make sure we load the EXIF data for each image
-		getEXIF();
 
 		// Fill in info when hovering over an image
 		showImgInfo();
@@ -26,8 +29,6 @@ define(["domReady!", "size", "jquery", "smugmug", "history", "cookie"], function
 		// When the next or prev arrows are clicked in the overlay
 		onImageChange();
 
-		// Cache all images
-		cacheAll();
 
 	}
 
@@ -415,7 +416,9 @@ define(["domReady!", "size", "jquery", "smugmug", "history", "cookie"], function
 
 	function cache(id) {
 		var url	= $("#" + id).parent().attr("href");
-		$("#display").clone().attr("id","cache" + id).attr("imgid",id).attr("src",url).appendTo("#cache");
+		var tempImg = new Image()
+		tempImg.src = url;
+		//$("#display").clone().attr("id","cache" + id).attr("imgid",id).attr("src",url).appendTo("#cache");
 	}
 
 	/**Parses string formatted as YYYY-MM-DD to a Date object.
@@ -566,6 +569,9 @@ define(["domReady!", "size", "jquery", "smugmug", "history", "cookie"], function
 		return dateFormat(this, mask, utc);
 	};
 
+
+	// init
+	album.init();
 
 	// Return the album
 	return album

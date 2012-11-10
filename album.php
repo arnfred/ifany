@@ -58,7 +58,7 @@ $html	= $s->displayNewAlbum($id,$key);
 
 			// The call back function
 			function(album) {
-				album.display();
+				// Nothing
 			}
 		)
 		</script>

@@ -197,7 +197,7 @@ class SmugGallery {
 
 		$date 	= new DateTime($album['LastUpdated'],new DateTimeZone("America/Santiago"));
 		$albums	= $this->getAlbums();
-		$update = $albums[$album['id']]['Category']['Name'].", ".$date->format('d/m/Y');
+		$update = $albums[$album['id']]['Category']['Name'].", uploaded on ".$date->format('d/m/Y');
 		$html	 = "<div class=\"info\" >";
 		$html	.= "<h2 id=\"scrollingDiv\">".$album["Title"]."</h2>";
 		$html	.= "<p class=\"date\">$update</p>";

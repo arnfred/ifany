@@ -47,7 +47,7 @@ $html 	= $s->frontpage($show);
 
 				// The call back function
 				function(frontpage) {
-					frontpage.display();
+					// nothing here
 				}
 			);
 			

@@ -3,7 +3,7 @@ define(["domReady!", "size", "jquery", "smugmug", "cookie"], function(domReady, 
 	// Init frontpage
 	frontpage = {};
 
-	frontpage.display = function() {
+	frontpage.init = function() {
 
 		// Move content to appropriate position on frontpage
 		adjustContent();
@@ -178,6 +178,9 @@ define(["domReady!", "size", "jquery", "smugmug", "cookie"], function(domReady, 
 		else return result;
 	}
 
+
+	// init
+	frontpage.init();
 
 	// Return the frontpage
 	return frontpage;
