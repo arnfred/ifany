@@ -28,6 +28,7 @@ define(["domReady!", "size", "jquery", "smugmug", "history", "cookie"], function
 
 		// Cache all images
 		cacheAll();
+
 	}
 
 
@@ -52,6 +53,9 @@ define(["domReady!", "size", "jquery", "smugmug", "history", "cookie"], function
 
 						// Date
 					$("#" + id).attr("date",data["Image"]["DateTimeOriginal"]);
+
+					// Select the first image
+					$(".albumBox").first().children("img").mouseover();
 				});
 			});
 		});
@@ -176,7 +180,9 @@ define(["domReady!", "size", "jquery", "smugmug", "history", "cookie"], function
 
 	function changeToThumb(e,elem) {
 		if (elem.length > 0) {
-			$.scrollTo(elem, 250, { axis:'y',offset:-100 });
+			scroll = elem.parent().position().top - 100;
+			$("body").animate({ scrollTop: scroll }, 400)
+			//$.scrollTo(elem, 250, { axis:'y',offset:-100 });
 			e.preventDefault();
 			elem.mouseover();
 		}
