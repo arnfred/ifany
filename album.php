@@ -39,6 +39,31 @@ $html	= $s->displayNewAlbum($id,$key);
 	  <link rel="icon" type="image/png" href="favicon.png">
 		<link href="reset.css" rel="stylesheet" type="text/css">
 		<link href="style.css" rel="stylesheet" type="text/css">
+		<script type="text/javascript" src="js/curl.js"></script>
+
+		<script>
+		// Set up curl
+		curl(
+
+			// Set up the configuration
+			{
+				baseUrl: 'js',
+				paths: {
+					"Example": "lib/example"
+				},
+			}, 
+
+			// Set up the required modules
+			["album"],
+
+			// The call back function
+			function(album) {
+				album.display();
+			}
+		)
+		</script>
+
+		<!--
 		<script type="text/javascript" src="js/size.js"></script>
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/jquery-smugmug-1.0.0.js"></script>
@@ -46,6 +71,7 @@ $html	= $s->displayNewAlbum($id,$key);
 		<script type="text/javascript" src="js/cookie.js"></script>
 		<script type="text/javascript" src="js/history.js"></script>
 		<script type="text/javascript" src="js/album.js"></script>
+		-->
    </head>
    <body>
 

@@ -1,3 +1,5 @@
+// From https://github.com/jmaurer/jquery-smugmug
+// all credits goes to J Maurer. I've just modified the code a little
 define(["jquery"], function($) {
 
 
@@ -39,94 +41,94 @@ define(["jquery"], function($) {
 	};
 
 	$.each([
-		"smugmug.albums.applyWatermark",
-		"smugmug.albums.changeSettings",
-		"smugmug.albums.create",
-		"smugmug.albums.delete",
-		"smugmug.albums.get",
-		"smugmug.albums.getInfo",
-		"smugmug.albums.removeWatermark",
-		"smugmug.albums.reSort",
+		"albums.applyWatermark",
+		"albums.changeSettings",
+		"albums.create",
+		"albums.delete",
+		"albums.get",
+		"albums.getInfo",
+		"albums.removeWatermark",
+		"albums.reSort",
 
-		"smugmug.albumtemplates.changeSettings",
-		"smugmug.albumtemplates.create",
-		"smugmug.albumtemplates.delete",
-		"smugmug.albumtemplates.get",
+		"albumtemplates.changeSettings",
+		"albumtemplates.create",
+		"albumtemplates.delete",
+		"albumtemplates.get",
 
-		"smugmug.auth.checkAccessToken",
-		"smugmug.auth.getAccessToken",
-		"smugmug.auth.getRequestToken",
+		"auth.checkAccessToken",
+		"auth.getAccessToken",
+		"auth.getRequestToken",
 
-		"smugmug.categories.create",
-		"smugmug.categories.delete",
-		"smugmug.categories.get",
-		"smugmug.categories.rename",
+		"categories.create",
+		"categories.delete",
+		"categories.get",
+		"categories.rename",
 
-		"smugmug.communities.get",
+		"communities.get",
 
-		"smugmug.family.add",
-		"smugmug.family.get",
-		"smugmug.family.remove",
-		"smugmug.family.removeAll",
+		"family.add",
+		"family.get",
+		"family.remove",
+		"family.removeAll",
 
-		"smugmug.friends.add",
-		"smugmug.friends.get",
-		"smugmug.friends.remove",
-		"smugmug.friends.removeAll",
+		"friends.add",
+		"friends.get",
+		"friends.remove",
+		"friends.removeAll",
 
-		"smugmug.images.applyWatermark",
-		"smugmug.images.changePosition",
-		"smugmug.images.changeSettings",
-		"smugmug.images.crop",
-		"smugmug.images.delete",
-		"smugmug.images.get",
-		"smugmug.images.getEXIF",
-		"smugmug.images.getInfo",
-		"smugmug.images.getURLs",
-		"smugmug.images.removeWatermark",
-		"smugmug.images.rotate",
-		"smugmug.images.upload",
-		"smugmug.images.uploadFromURL",
-		"smugmug.images.zoomThumbnail",
+		"images.applyWatermark",
+		"images.changePosition",
+		"images.changeSettings",
+		"images.crop",
+		"images.delete",
+		"images.get",
+		"images.getEXIF",
+		"images.getInfo",
+		"images.getURLs",
+		"images.removeWatermark",
+		"images.rotate",
+		"images.upload",
+		"images.uploadFromURL",
+		"images.zoomThumbnail",
 
-		"smugmug.login.anonymously",
-		"smugmug.login.withHash",
-		"smugmug.login.withPassword",
+		"login.anonymously",
+		"login.withHash",
+		"login.withPassword",
 
-		"smugmug.logout",
+		"logout",
 
-		"smugmug.products.get",
+		"products.get",
 
-		"smugmug.sharegroups.albums.add",
-		"smugmug.sharegroups.albums.get",
-		"smugmug.sharegroups.albums.remove",
-		"smugmug.sharegroups.create",
-		"smugmug.sharegroups.delete",
-		"smugmug.sharegroups.get",
-		"smugmug.sharegroups.getInfo",
+		"sharegroups.albums.add",
+		"sharegroups.albums.get",
+		"sharegroups.albums.remove",
+		"sharegroups.create",
+		"sharegroups.delete",
+		"sharegroups.get",
+		"sharegroups.getInfo",
 
-		"smugmug.styles.getTemplates",
+		"styles.getTemplates",
 
-		"smugmug.subcategories.create",
-		"smugmug.subcategories.delete",
-		"smugmug.subcategories.get",
-		"smugmug.subcategories.getAll",
-		"smugmug.subcategories.rename",
+		"subcategories.create",
+		"subcategories.delete",
+		"subcategories.get",
+		"subcategories.getAll",
+		"subcategories.rename",
 
-		"smugmug.themes.get",
+		"themes.get",
 
-		"smugmug.users.getDisplayName",
-		"smugmug.users.getTree",
+		"users.getDisplayName",
+		"users.getTree",
 
-		"smugmug.watermarks.changeSettings",
-		"smugmug.watermarks.create",
-		"smugmug.watermarks.delete",
-		"smugmug.watermarks.get",
-		"smugmug.watermarks.getInfo"
+		"watermarks.changeSettings",
+		"watermarks.create",
+		"watermarks.delete",
+		"watermarks.get",
+		"watermarks.getInfo"
 
 	], function() {
 		var method = this + "";
-		var pos = jQuery;
+		var pos = smugmug;
 		var minfo = method.split(".");
 		var mname = minfo.pop();
 
@@ -142,7 +144,7 @@ define(["jquery"], function($) {
 
 		pos[mname] = function(params, callback) {
 			if (!params) params = {};
-			return smugmug.apiCall(method, params, callback);
+			return smugmug.apiCall("smugmug." + method, params, callback);
 		};
 	});
 
