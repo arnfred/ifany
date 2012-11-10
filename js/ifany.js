@@ -168,7 +168,6 @@ define(["domReady!", "size", "jquery", "smugmug", "cookie"], function(domReady, 
 		$("body").animate({ scrollTop: 0 }, 400, function() {
 			$(divid).fadeOut();
 		});
-
 	}
 
 

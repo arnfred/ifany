@@ -64,13 +64,6 @@ $html 	= $s->frontpage($show);
 		   })();
 
 		   </script>
-<!--
-		<script type="text/javascript" src="js/size.js"></script>
-		<script type="text/javascript" src="js/jquery.js"></script>
-		<script type="text/javascript" src="js/jquery.scrollTo-min.js"></script>
-		<script type="text/javascript" src="js/ifany.js"></script>
-		<script type="text/javascript" src="js/jquery-smugmug-1.0.0.js"></script>
--->
    </head>
    <body>
 
