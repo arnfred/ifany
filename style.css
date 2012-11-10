@@ -64,7 +64,7 @@ div#navPrev p				{ padding-left:10px; font-size:1.3em; }
 div#navNext					{ text-align:right; vertical-align:middle; width:30px; position:relative; float:left; }
 div#navNext p				{ padding-right:10px; font-size:1.3em; }
 div#captionText				{ position:relative; float:left; width:496px; text-align:left; }
-div#captionText p			{ padding:2px; }
+div#captionText p			{ padding:2px; padding-bottom:4px; }
 
 
 /* Index specific */
