@@ -376,6 +376,9 @@ function imageChange(index) {
 	// Make things change in the background
 	albumBox.find("img").mouseover();
 
+	// Update display id
+	$("#display").attr("imgid",id);
+
 	// Set image and caption
 	$("#display").hide().attr("src", url);
 	setImageSize();
