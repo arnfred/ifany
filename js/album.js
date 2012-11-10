@@ -3,11 +3,8 @@ $(document).ready(function() {
 	// Set everything that needs to be set, and make sure to update it on resize
 	onResizeAndLoad();
 
-	// Save original URL
-	originalURL = document.URL;
-
 	// Check if we want to navigate to a specific image
-	if (window.location.hash) openOverlay(window.location.hash.substr(1));
+	if (document.URL.split("&img").length > 1) openOverlay(window.location.hash.substr(1));
 
 	// Make sure we load the EXIF data for each image
 	getEXIF();
@@ -195,7 +192,7 @@ function clickThumb() {
 function openOverlay(index) {
 
 	// Get box with info
-	albumBox = $([$(".albumBox")[index]])
+	var albumBox = $(".albumBox[index=" + index +"]");
 
 	// If albumBox doesn't exist, abort
 	if (albumBox[0] == undefined) return false;
@@ -352,24 +349,10 @@ function onImageChange() {
 
 		// Now get the id, url and albumbox
 		var id			= $(this).find("a").attr("imgid");
-		var url			= $(this).find("a").attr("href");
-		var albumbox	= $("#" + id);
+		var albumBox	= $("#" + id);
 		var index		= albumBox.attr("index");
-		console.log(id)
-		console.debug(albumBox)
-		console.log(index);
 
-		// Set new id and index
-		$("#display").attr("imgid", id);
-
-		// Make things change in the background
-		$("#" + id).find("img").mouseover();
-
-		// Set image and caption
-		$("#display").hide().attr("src", url);
-		setImageSize();
-		updateCaption(albumbox);
-		$("#display").show();
+		imageChange(index);
 
 		// Get the new url and push to history
 		var newUrl = document.URL.split("&img")[0] + "&img=" + index;
@@ -379,6 +362,28 @@ function onImageChange() {
 		// window.history.replaceState({}, document.title, originalURL + "&img=" + index);
 		// window.location.hash = '#' + index;
 	});
+}
+
+function imageChange(index) {
+
+	// Get box with info
+	var albumBox = $(".albumBox[index=" + index +"]");
+	var id = albumBox.attr("id");
+
+	// Get url
+	var url = albumBox.parent().attr("href"); 
+
+	// Make things change in the background
+	albumBox.find("img").mouseover();
+
+	// Set image and caption
+	$("#display").hide().attr("src", url);
+	setImageSize();
+	updateCaption(albumBox);
+	$("#display").show();
+
+	// Update caption
+	updateCaption(albumBox);
 }
 
 
