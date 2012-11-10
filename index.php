@@ -28,8 +28,31 @@ $html 	= $s->frontpage($show);
 		<?php echo $og; ?>
 		<link href="reset.css" rel="stylesheet" type="text/css">
 		<link href="style.css" rel="stylesheet" type="text/css">
+		<script type="text/javascript" src="js/curl.js"></script>
 		   <script type="text/javascript">
 
+			// Curl
+			curl(
+
+				// Set up the configuration
+				{
+					baseUrl: 'js',
+					paths: {
+						"Example": "lib/example"
+					},
+				}, 
+
+				// Set up the required modules
+				["ifany"],
+
+				// The call back function
+				function(frontpage) {
+					frontpage.display();
+				}
+			);
+			
+
+			// Google analytics
 		   var _gaq = _gaq || [];
 		   _gaq.push(['_setAccount', 'UA-380027-3']);
 		   _gaq.push(['_trackPageview']);
@@ -41,11 +64,13 @@ $html 	= $s->frontpage($show);
 		   })();
 
 		   </script>
+<!--
 		<script type="text/javascript" src="js/size.js"></script>
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/jquery.scrollTo-min.js"></script>
 		<script type="text/javascript" src="js/ifany.js"></script>
 		<script type="text/javascript" src="js/jquery-smugmug-1.0.0.js"></script>
+-->
    </head>
    <body>
 
