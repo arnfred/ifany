@@ -35,6 +35,7 @@ define(["domReady!", "size", "jquery", "smugmug", "history", "cookie"], function
 	// Load image exif data
 	function getEXIF() {
 		smugmug.login.anonymously(function() {
+			var mouseoverSet = false;
 			$(".albumBox").each(function() { 
 				var key = $(this).attr("key"); 
 				var id = $(this).attr("id");
@@ -55,7 +56,10 @@ define(["domReady!", "size", "jquery", "smugmug", "history", "cookie"], function
 					$("#" + id).attr("date",data["Image"]["DateTimeOriginal"]);
 
 					// Select the first image
-					$(".albumBox").first().children("img").mouseover();
+					if (!mouseoverSet) {
+						$(".albumBox").first().children("img").mouseover();
+						mouseoverSet = true;
+					}
 				});
 			});
 		});
