@@ -102,4 +102,4 @@ define(["cookie"], function(cookie) {
 	// Return the size object
 	return size;
 
-})
+});
