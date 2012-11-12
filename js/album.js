@@ -5,6 +5,7 @@ define(["size", "jquery", "smugmug", "history", "cookie"], function(size, $, smu
 
 	// Cache all images
 	cacheAll();
+
 	// Make sure we load the EXIF data for each image
 	getEXIF();
 
@@ -28,6 +29,10 @@ define(["size", "jquery", "smugmug", "history", "cookie"], function(size, $, smu
 
 		// When the next or prev arrows are clicked in the overlay
 		onImageChange();
+
+		// Test
+		//onpopstate
+		window.onpopstate = function() { imageChange(document.URL.split("&img=")[1]); }
 
 
 	}
